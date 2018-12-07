@@ -20,11 +20,10 @@ let getData path =
     lst.ToArray()
 
 let getDataFrom16sBase fastaFile sortNum =
-    getData fastaFile 
-    //|> Array.filter (fun (meta, _) -> meta.Contains("Bacteria;"))
+    (getData fastaFile).[1..]
     |> Array.map (fun (meta, gen) -> ([for i in 0..sortNum - 1 -> 
                                                                 if i = 0 then meta.Split().[0].[1 ..]
-                                                                else meta.Split([|' '; ';'|]).[i]] |> String.concat " ", gen))//(meta.Split().[0].[1 ..], gen))
+                                                                else meta.Split([|' '; ';'|]).[i]] |> String.concat " ", gen))
 
 
 let getCompleteGenomeData fastaFile =

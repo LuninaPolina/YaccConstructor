@@ -1,4 +1,5 @@
-﻿open System.IO
+﻿module Program
+(*open System.IO
 open System.Drawing
 
 open Drawing
@@ -9,7 +10,6 @@ open Yard.Core.IL
 
 open Yard.Core
 open System.Collections.Generic
-
 let getElements rule = 
     match rule.body with 
     | PSeq(e, a, l) -> e 
@@ -155,7 +155,7 @@ let main argv =
    
     let stopWatch = System.Diagnostics.Stopwatch.StartNew()
 
-    positiveToUIntArray true "C:/Users/User/Desktop/folder/YaccConstructor/tests/data/bio/220/prokaryotic.fa" 1 outFilePath parser//"C:/Users/User/Desktop/folder/GG/gg_16s_format.fasta" 2//"C:/Users/User/Desktop/folder/YaccConstructor/tests/Bio.Pictures/SILVA_128_SSURef_Nr99_tax_silva_first_500k_lines.fasta" 2
+    positiveToUIntArray true inputPath 1 outFilePath parser//"C:/Users/User/Desktop/folder/GG/gg_16s_format.fasta" 2//"C:/Users/User/Desktop/folder/YaccConstructor/tests/Bio.Pictures/SILVA_128_SSURef_Nr99_tax_silva_first_500k_lines.fasta" 2
     stopWatch.Stop()
     printfn "%f" stopWatch.Elapsed.TotalMilliseconds
     System.Console.ReadKey() |> ignore
@@ -163,3 +163,4 @@ let main argv =
     //@"D:\YC\YaccConstructor\tests\data\bio\trna\semples"
     //drawPositiveExamples true legend @"D:\YC\YaccConstructor\tests\data\bio\trna\semples" 1 parser
     0
+    *)

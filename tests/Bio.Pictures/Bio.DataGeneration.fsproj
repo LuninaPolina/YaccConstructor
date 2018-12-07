@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Bio.Pictures</Name>
+    <Name>Bio.DataGeneration</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\Bio.Pictures.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <StartArguments>"" "out220"  "C:\Users\User\Desktop\folder\YaccConstructor\src\YC.GrammarZOO\Bio\tests\bio_brackets.yrd"</StartArguments>
+    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "out220" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,7 +38,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Release\Bio.Pictures.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <StartArguments>"" "out220" "C:\Users\User\Desktop\folder\YaccConstructor\src\YC.GrammarZOO\Bio\tests\bio_brackets.yrd "</StartArguments>
+    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "out220" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd"</StartArguments>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -58,6 +58,9 @@
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="Copy of paket.references" />
+    <Compile Include="Pictures.fs" />
+    <Compile Include="Vectors.fs" />
+    <Compile Include="Launch.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\AbstractAnalysis.Common\AbstractAnalysis.Common.fsproj">
