@@ -2,32 +2,40 @@
 
 open System.Text
 
-let getData path = 
+let getData path withClasses = 
     let d = new System.Text.StringBuilder()
     let meta = ref ""
     let lst = new ResizeArray<_>()
+    let classes = new ResizeArray<_>()
+    let mutable isFst = withClasses
     for s in System.IO.File.ReadAllLines(path) do
-        if s.[0] = '>'
+        if isFst
         then
-            if !meta <> ""
-            then 
-                lst.Add(!meta, d.ToString())
-                d.Clear() |> ignore
-            meta := s
+            classes.AddRange(s.Split(','))
+            isFst <- false
         else
-            d.Append s |> ignore
+            if s.[0] = '>'
+            then
+                if !meta <> ""
+                then 
+                    lst.Add(!meta, d.ToString())
+                    d.Clear() |> ignore
+                meta := s
+            else
+                d.Append s |> ignore
     lst.Add(!meta, d.ToString())
-    lst.ToArray()
+    lst.ToArray(), classes
 
 let getDataFrom16sBase fastaFile sortNum =
-    (getData fastaFile).[1..]
+    let data = getData fastaFile true
+    fst data
     |> Array.map (fun (meta, gen) -> ([for i in 0..sortNum - 1 -> 
                                                                 if i = 0 then meta.Split().[0].[1 ..]
-                                                                else meta.Split([|' '; ';'|]).[i]] |> String.concat " ", gen))
+                                                                else meta.Split([|' '; ';'|]).[i]] |> String.concat " ", gen)), snd data
 
 
 let getCompleteGenomeData fastaFile =
-    let data = (getData fastaFile).[0]
+    let data = (fst(getData fastaFile false)).[0]
     let metaParts = (fst data).Split(',') |> Array.map (fun s -> s.Trim())
     let id = metaParts.[0].[1 ..] 
     let intervals16s = 

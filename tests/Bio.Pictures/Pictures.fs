@@ -12,6 +12,7 @@ open Yard.Core.IL
 open Yard.Core
 open System.Collections.Generic
 
+
 type drawExamples() =
 
     member x.fromFasta (inputPath, grammar, len, ?isGpu, (?legend:(string*Color) list), ?sortNum, ?format) =
@@ -23,7 +24,7 @@ type drawExamples() =
         let format = defaultArg format ".bmp"
         let dir = "../../out/" + len.ToString() + "/"
         Directory.CreateDirectory(dir) |> ignore
-        for el in data do 
+        for el in fst data do 
             let (id, gen) = el       
             let path = dir + ([for i in 1..sortNum - 1 -> id.Split().[i]] |> String.concat("/")) + "/" 
             printfn "path=%A"  path
@@ -34,7 +35,6 @@ type drawExamples() =
             |".tex" -> picture.DrawInTex(parser.StartNonTerm,gen,path)
             |_ -> failwith "Unsupported output format"
         
-
 
     member x.fromGenome (inputPaths, grammar, len, ?isGpu, ?legend) =
         let parser = new BioParser(grammar)

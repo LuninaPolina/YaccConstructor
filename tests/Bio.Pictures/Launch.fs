@@ -10,13 +10,14 @@ open Yard.Core.IL
 open Yard.Core
 open System.Collections.Generic
 
+
 [<EntryPoint>]
 let main argv = 
     let inputPath = argv.[0]
     let grammar = argv.[1]
     let len = argv.[2]
    
-    let de = new Vectors.toUIntArray()
-    de.fromFasta (inputPath, grammar, 220)
+    let generate = new Vectors.toUIntArray()
+    generate.fromFasta (inputPath, grammar, 220)
 
     0

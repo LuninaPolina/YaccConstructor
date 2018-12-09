@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\Bio.Pictures.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "out220" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd"</StartArguments>
+    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd" 220</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,7 +38,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Release\Bio.Pictures.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "out220" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd"</StartArguments>
+    <StartArguments>"C:\Users\Polina\Desktop\diploma\bact_stuff\testDD.fasta" "C:\Users\Polina\Desktop\YaccConstructor\src\YC.GrammarZOO\Bio\tRNA.yrd" 220</StartArguments>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
